@@ -37,7 +37,7 @@ async function getNewListings(buildingSlug, buildingAddress) {
     const yesterdayISO = yesterday.toISOString();
 
     // Only get listings that were originally created in the last 36 hours (truly new listings)
-    const filter = `StreetNumber eq '${streetNumber}' and StreetName eq '${streetName}' and PropertySubType eq 'Condo Apartment' and StandardStatus eq 'Active' and OriginalEntryTimestamp ge ${yesterdayISO}`;
+    const filter = `StreetNumber eq '${streetNumber}' and StreetName eq '${streetName}' and PropertySubType eq 'Condo Apartment' and MlsStatus eq 'New' and OriginalEntryTimestamp ge ${yesterdayISO}`;
     
     const listings = await fetchFromAmpre(filter, 'OriginalEntryTimestamp desc');
     
@@ -73,7 +73,7 @@ async function getRecentlySoldListings(buildingSlug, buildingAddress) {
     yesterday.setHours(yesterday.getHours() - 36);
     const yesterdayISO = yesterday.toISOString();
 
-    const filter = `StreetNumber eq '${streetNumber}' and StreetName eq '${streetName}' and PropertySubType eq 'Condo Apartment' and StandardStatus eq 'Closed' and TransactionType eq 'For Sale' and SoldEntryTimestamp ge ${yesterdayISO}`;
+    const filter = `StreetNumber eq '${streetNumber}' and StreetName eq '${streetName}' and PropertySubType eq 'Condo Apartment' and (MlsStatus eq 'Sold' or MlsStatus eq 'Sold Conditional') and SoldEntryTimestamp ge ${yesterdayISO}`;
     
     const listings = await fetchFromAmpre(filter, 'ModificationTimestamp desc');
     
@@ -109,7 +109,7 @@ async function getRecentlyLeasedListings(buildingSlug, buildingAddress) {
     yesterday.setHours(yesterday.getHours() - 36);
     const yesterdayISO = yesterday.toISOString();
 
-    const filter = `StreetNumber eq '${streetNumber}' and StreetName eq '${streetName}' and PropertySubType eq 'Condo Apartment' and StandardStatus eq 'Closed' and TransactionType eq 'For Lease' and LeasedEntryTimestamp ge ${yesterdayISO}`;
+    const filter = `StreetNumber eq '${streetNumber}' and StreetName eq '${streetName}' and PropertySubType eq 'Condo Apartment' and (MlsStatus eq 'Leased' or MlsStatus eq 'Leased Conditional') and LeasedEntryTimestamp ge ${yesterdayISO}`;
     
     const listings = await fetchFromAmpre(filter, 'ModificationTimestamp desc');
     
