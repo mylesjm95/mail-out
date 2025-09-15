@@ -36,9 +36,10 @@ async function getNewListings(buildingSlug, buildingAddress) {
     yesterday.setHours(yesterday.getHours() - 36);
     const yesterdayISO = yesterday.toISOString();
 
-    const filter = `StreetNumber eq '${streetNumber}' and StreetName eq '${streetName}' and PropertySubType eq 'Condo Apartment' and StandardStatus ne 'Closed' and ModificationTimestamp ge ${yesterdayISO}`;
+    // Only get listings that were originally created in the last 36 hours (truly new listings)
+    const filter = `StreetNumber eq '${streetNumber}' and StreetName eq '${streetName}' and PropertySubType eq 'Condo Apartment' and StandardStatus eq 'Active' and OriginalEntryTimestamp ge ${yesterdayISO}`;
     
-    const listings = await fetchFromAmpre(filter, 'ModificationTimestamp desc');
+    const listings = await fetchFromAmpre(filter, 'OriginalEntryTimestamp desc');
     
     return listings.map(listing => ({
       ...listing,
@@ -72,7 +73,7 @@ async function getRecentlySoldListings(buildingSlug, buildingAddress) {
     yesterday.setHours(yesterday.getHours() - 36);
     const yesterdayISO = yesterday.toISOString();
 
-    const filter = `StreetNumber eq '${streetNumber}' and StreetName eq '${streetName}' and PropertySubType eq 'Condo Apartment' and StandardStatus eq 'Closed' and not (TransactionType eq 'For Lease') and ModificationTimestamp ge ${yesterdayISO}`;
+    const filter = `StreetNumber eq '${streetNumber}' and StreetName eq '${streetName}' and PropertySubType eq 'Condo Apartment' and StandardStatus eq 'Closed' and TransactionType eq 'For Sale' and SoldEntryTimestamp ge ${yesterdayISO}`;
     
     const listings = await fetchFromAmpre(filter, 'ModificationTimestamp desc');
     
@@ -108,7 +109,7 @@ async function getRecentlyLeasedListings(buildingSlug, buildingAddress) {
     yesterday.setHours(yesterday.getHours() - 36);
     const yesterdayISO = yesterday.toISOString();
 
-    const filter = `StreetNumber eq '${streetNumber}' and StreetName eq '${streetName}' and PropertySubType eq 'Condo Apartment' and StandardStatus eq 'Closed' and TransactionType eq 'For Lease' and ModificationTimestamp ge ${yesterdayISO}`;
+    const filter = `StreetNumber eq '${streetNumber}' and StreetName eq '${streetName}' and PropertySubType eq 'Condo Apartment' and StandardStatus eq 'Closed' and TransactionType eq 'For Lease' and LeasedEntryTimestamp ge ${yesterdayISO}`;
     
     const listings = await fetchFromAmpre(filter, 'ModificationTimestamp desc');
     
