@@ -1,0 +1,123 @@
+/* Skeleton Loading Styles */
+.skeleton-loading {
+  background: #f8f9fa;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.skeleton-image {
+  height: 200px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+.skeleton-content {
+  padding: 16px;
+}
+
+.skeleton-title {
+  height: 20px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  margin-bottom: 12px;
+  border-radius: 4px;
+}
+
+.skeleton-text {
+  height: 16px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  width: 80%;
+}
+
+.skeleton-text:last-child {
+  width: 60%;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Condo Listings Styles */
+
+/* Sold listing styles */
+.sold-listing .list-thumb {
+  position: relative;
+}
+
+.sold-tag {
+  background-color: #28a745 !important;
+  color: white !important;
+}
+
+.sold-price {
+  color: #28a745 !important;
+  font-weight: bold;
+}
+
+.sold-date {
+  font-size: 0.875rem;
+  color: #6c757d;
+}
+
+/* Ensure consistent image sizing without breaking overlays */
+.listing-style5 .list-thumb img {
+  width: 100% !important;
+  height: 248px !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  transition: transform 0.3s ease;
+}
+
+.listing-style5 .list-thumb:hover img {
+  transform: scale(1.05);
+}
+
+/* Remove the problematic CSS that broke overlays */
+.listing-style5 .list-thumb::before {
+  display: none;
+}
+
+.listing-style5 .list-thumb > * {
+  position: static;
+}
+
+/* Error Container Styles */
+.error-container {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.error-container h3 {
+  color: #dc3545;
+  font-weight: 600;
+}
+
+.error-container p {
+  color: #6c757d;
+  line-height: 1.5;
+}
+
+.error-container button {
+  padding: 10px 24px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.error-container button:hover {
+  background-color: #0056b3;
+} 

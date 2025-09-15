@@ -1,0 +1,45 @@
+{
+  "name": "homez-nextjs",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@babel/core": "7.27.1",
+    "@popperjs/core": "^2.11.8",
+    "@prisma/client": "^6.13.0",
+    "@react-email/render": "^0.0.12",
+    "@react-google-maps/api": "^2.20.6",
+    "@supabase/ssr": "^0.6.1",
+    "@supabase/supabase-js": "^2.53.0",
+    "aos": "^2.3.4",
+    "bootstrap": "5.3.6",
+    "dotenv": "^17.2.1",
+    "eslint": "9.27.0",
+    "next": "^15.4.4",
+    "photoswipe": "^5.4.4",
+    "prop-types": "15.8.1",
+    "rc-slider": "^11.1.8",
+    "react": "19.1.0",
+    "react-countup": "^6.5.3",
+    "react-dom": "19.1.0",
+    "react-error-boundary": "^6.0.0",
+    "react-intersection-observer": "^9.16.0",
+    "react-photoswipe-gallery": "^3.1.1",
+    "react-pro-sidebar": "^1.1.0",
+    "react-select": "^5.10.1",
+    "react-tooltip": "^5.28.1",
+    "recharts": "2.15.3",
+    "resend": "^3.2.0",
+    "sass": "^1.89.0",
+    "swiper": "^11.2.8"
+  },
+  "devDependencies": {
+    "prisma": "^6.13.0"
+  }
+}

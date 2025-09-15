@@ -1,0 +1,136 @@
+/* Login Modal Styles */
+.login-modal .alert {
+  border-radius: 8px;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.login-modal .alert-danger {
+  background-color: #fef2f2;
+  color: #dc2626;
+  border-left: 4px solid #dc2626;
+}
+
+.login-modal .alert-success {
+  background-color: #f0fdf4;
+  color: #16a34a;
+  border-left: 4px solid #16a34a;
+}
+
+.login-modal .alert-info {
+  background-color: #eff6ff;
+  color: #1d4ed8;
+  border-left: 4px solid #3b82f6;
+}
+
+.login-modal .alert .btn-close {
+  padding: 0.5rem;
+  margin: -0.5rem -0.5rem -0.5rem auto;
+  background-size: 0.75em;
+}
+
+.login-modal .alert .btn-close:hover {
+  opacity: 0.75;
+}
+
+/* Building signup specific styles */
+.login-modal .modal-header .modal-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.login-modal .border-bottom {
+  border-bottom: 1px solid #e5e7eb !important;
+}
+
+.login-modal .building-info-alert {
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  border: 1px solid #93c5fd;
+  color: #1e40af;
+  font-weight: 500;
+}
+
+.login-modal .building-info-alert i {
+  color: #3b82f6;
+}
+
+/* Form validation styles */
+.login-modal .form-control.is-invalid {
+  border-color: #dc2626;
+  box-shadow: 0 0 0 0.2rem rgba(220, 38, 38, 0.25);
+}
+
+.login-modal .invalid-feedback {
+  display: block;
+  color: #dc2626;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+/* Loading button styles */
+.login-modal .btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.login-modal .spinner-border-sm {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Tab switching buttons */
+.login-modal .tab-switch-btn {
+  background: none;
+  border: none;
+  color: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+  font: inherit;
+}
+
+.login-modal .tab-switch-btn:hover {
+  opacity: 0.8;
+}
+
+/* Form text helper */
+.login-modal .form-text {
+  font-size: 12px;
+  color: #6b7280;
+  margin-top: 4px;
+}
+
+/* Alert animations */
+.login-modal .alert {
+  animation: slideInDown 0.3s ease-out;
+}
+
+@keyframes slideInDown {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .login-modal .alert {
+    font-size: 13px;
+    padding: 0.75rem;
+  }
+  
+  .login-modal .alert .btn-close {
+    padding: 0.25rem;
+    margin: -0.25rem -0.25rem -0.25rem auto;
+  }
+  
+  .login-modal .modal-header .modal-title {
+    font-size: 1.1rem;
+  }
+}
