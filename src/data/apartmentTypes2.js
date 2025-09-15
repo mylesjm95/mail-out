@@ -1,4 +1,4 @@
-export default [
+const apartmentTypes2 = [
   {
     title: "House",
     imageSrc: "/images/listings/as-1.jpg",
@@ -50,3 +50,5 @@ export default [
     properties: 22,
   },
 ];
+
+export default apartmentTypes2;

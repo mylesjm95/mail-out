@@ -1,4 +1,4 @@
-export default [
+const listings = [
   {
 
     id: 1,
@@ -709,3 +709,5 @@ export default [
   ],
   },
 ];
+
+export default listings;

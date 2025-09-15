@@ -1,8 +1,6 @@
 import DefaultHeader from "@/components/common/DefaultHeader";
 import MobileMenu from "@/components/common/mobile-menu";
 
-import PropertyFilteringMapFour from "@/components/listing/map-style/map-v3/PropertyFilteringMapFour";
-
 import React from "react";
 
 export const metadata = {
@@ -20,10 +18,11 @@ const MapV3 = () => {
       <MobileMenu />
       {/* End Mobile Nav  */}
 
-      {/* start  filter sidebar */}
-      <PropertyFilteringMapFour/>
-   
-      {/* Property Filtering */}
+      {/* Temporarily disabled due to build issue */}
+      <div className="container py-5">
+        <h1>Map V3 - Temporarily Unavailable</h1>
+        <p>This page is being updated and will be available soon.</p>
+      </div>
     </>
   );
 };

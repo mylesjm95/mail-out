@@ -1,4 +1,4 @@
-export default [
+const propertyByCities = [
   {
     id: 1,
     name: "Los Angeles",
@@ -241,3 +241,5 @@ export default [
     propertyCount: 14,
   },
 ];
+
+export default propertyByCities;

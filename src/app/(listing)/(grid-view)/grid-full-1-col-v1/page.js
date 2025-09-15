@@ -1,7 +1,6 @@
 import DefaultHeader from "@/components/common/DefaultHeader";
 import Footer from "@/components/common/default-footer";
 import MobileMenu from "@/components/common/mobile-menu";
-import PropertyFiltering from "@/components/listing/grid-view/grid-full-1-col-v1/PropertyFiltering";
 
 
 import React from "react";
@@ -49,7 +48,19 @@ const GridFull1ColV1 = () => {
       {/* End Breadcumb Sections */}
 
       {/* Property Filtering */}
-      <PropertyFiltering/>
+      {/* Property Listings - Coming Soon */}
+      <section className="pt0 pb90 pt60-md pb60-md">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12">
+              <div className="text-center">
+                <h2>Property Listings</h2>
+                <p className="text-muted">Property listings will be available soon.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       
       {/* Property Filtering */}
 

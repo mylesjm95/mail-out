@@ -1,4 +1,4 @@
-export default [
+const mobileMenuItems = [
   {
     label: "Home",
     subMenu: [
@@ -127,3 +127,5 @@ export default [
     ],
   },
 ];
+
+export default mobileMenuItems;

@@ -15,7 +15,6 @@ import ExploreCities from "@/components/home/home-v7/ExploreCities";
 import Funfact2 from "@/components/home/home-v7/Funfact2";
 import PopularListings from "@/components/home/home-v7/PopularListings";
 import Testimonial from "@/components/home/home-v7/Testimonial";
-import Link from "next/link";
 import PropertyListing from "@/components/home/home-v7/PropertyListing";
 
 export const metadata = {

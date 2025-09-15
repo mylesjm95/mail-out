@@ -1,4 +1,4 @@
-export default [
+const agents = [
   {
     id: 1,
     city: "New York",
@@ -194,3 +194,5 @@ export default [
   // { id: 17, city:'Texas',category: 'Office',name: "Arlene McCoy", image: "/images/team/agent-1.png" },
   // { id: 18, city:'San Diego',category: 'Apartments',name: "Esther Howard", image: "/images/team/agent-2.png" },
 ];
+
+export default agents;

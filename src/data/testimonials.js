@@ -1,4 +1,4 @@
-export default [
+const testimonials = [
   {
     id: 1,
     title: "Great Work",
@@ -40,3 +40,5 @@ export default [
     company: "Bank of America",
   },
 ];
+
+export default testimonials;
