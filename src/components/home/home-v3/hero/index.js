@@ -1,6 +1,4 @@
 "use client";
-import AdvanceFilterModal from "@/components/common/advance-filter";
-import HeroContent from "./HeroContent";
 
 const Hero = ({ buildingSlug, buildingAddress }) => {
   return (
@@ -39,23 +37,8 @@ const Hero = ({ buildingSlug, buildingAddress }) => {
             Get Updates for This Building
           </button>
         </div>
-        <HeroContent />
       </div>
       {/* End Hero content */}
-
-      {/* <!-- Advance Feature Modal Start --> */}
-      <div className="advance-feature-modal">
-        <div
-          className="modal fade"
-          id="advanceSeachModal"
-          tabIndex={-1}
-          aria-labelledby="advanceSeachModalLabel"
-          aria-hidden="true"
-        >
-          <AdvanceFilterModal />
-        </div>
-      </div>
-      {/* <!-- Advance Feature Modal End --> */}
     </>
   );
 };

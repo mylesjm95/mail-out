@@ -67,15 +67,7 @@ const HeroContent = () => {
                 <div className="col-md-4 pe-0">
                   <div className="d-flex align-items-center justify-content-start justify-content-md-center mt-2 mt-md-0">
                     <button
-                      className="advance-search-btn"
-                      type="button"
-                      data-bs-toggle="modal"
-                      data-bs-target="#advanceSeachModal"
-                    >
-                      <span className="flaticon-settings" /> Advanced
-                    </button>
-                    <button
-                      className="advance-search-icon ud-btn btn-thm ms-4"
+                      className="advance-search-icon ud-btn btn-thm"
                       type="button"
                       onClick={() => router.push("/grid-default")}
                     >
