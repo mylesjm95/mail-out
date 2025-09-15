@@ -30,13 +30,13 @@ async function getNewListings(buildingSlug, buildingAddress) {
     }
     const streetName = streetNameParts.join(' ').replace(/\b\w/g, c => c.toUpperCase());
 
-    // Get listings from the last 36 hours that are still active (not sold/leased)
-    // Using 36 hours to account for timezone differences and ensure we catch all "yesterday's" activity
+    // Get listings from the last 7 days that are still active (not sold/leased)
+    // Using 7 days to catch recent activity and account for timezone differences
     const yesterday = new Date();
-    yesterday.setHours(yesterday.getHours() - 36);
+    yesterday.setDate(yesterday.getDate() - 7);
     const yesterdayISO = yesterday.toISOString();
 
-    // Only get listings that were originally created in the last 36 hours (truly new listings)
+    // Only get listings that were originally created in the last 7 days (truly new listings)
     const filter = `StreetNumber eq '${streetNumber}' and StreetName eq '${streetName}' and PropertySubType eq 'Condo Apartment' and MlsStatus eq 'New' and OriginalEntryTimestamp ge ${yesterdayISO}`;
     
     const listings = await fetchFromAmpre(filter, 'OriginalEntryTimestamp desc');
@@ -68,9 +68,9 @@ async function getRecentlySoldListings(buildingSlug, buildingAddress) {
     }
     const streetName = streetNameParts.join(' ').replace(/\b\w/g, c => c.toUpperCase());
 
-    // Get listings that were updated in the last 36 hours and are now sold
+    // Get listings that were updated in the last 7 days and are now sold
     const yesterday = new Date();
-    yesterday.setHours(yesterday.getHours() - 36);
+    yesterday.setDate(yesterday.getDate() - 7);
     const yesterdayISO = yesterday.toISOString();
 
     const filter = `StreetNumber eq '${streetNumber}' and StreetName eq '${streetName}' and PropertySubType eq 'Condo Apartment' and (MlsStatus eq 'Sold' or MlsStatus eq 'Sold Conditional') and SoldEntryTimestamp ge ${yesterdayISO}`;
@@ -104,9 +104,9 @@ async function getRecentlyLeasedListings(buildingSlug, buildingAddress) {
     }
     const streetName = streetNameParts.join(' ').replace(/\b\w/g, c => c.toUpperCase());
 
-    // Get listings that were updated in the last 36 hours and are now leased
+    // Get listings that were updated in the last 7 days and are now leased
     const yesterday = new Date();
-    yesterday.setHours(yesterday.getHours() - 36);
+    yesterday.setDate(yesterday.getDate() - 7);
     const yesterdayISO = yesterday.toISOString();
 
     const filter = `StreetNumber eq '${streetNumber}' and StreetName eq '${streetName}' and PropertySubType eq 'Condo Apartment' and (MlsStatus eq 'Leased' or MlsStatus eq 'Leased Conditional') and LeasedEntryTimestamp ge ${yesterdayISO}`;
