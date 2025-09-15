@@ -48,7 +48,7 @@ export default function InquiryForm({ buildingSlug, listingKey, agentId, buildin
     return (
       <div className="bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded">
         <h3 className="font-medium">Inquiry Submitted Successfully!</h3>
-        <p className="text-sm">We'll get back to you soon.</p>
+        <p className="text-sm">We&apos;ll get back to you soon.</p>
       </div>
     );
   }

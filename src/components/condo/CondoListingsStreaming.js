@@ -46,7 +46,7 @@ async function CondoListingsStreaming({ slug }) {
                 </div>
                 <h4 className="text-warning mb-3">Property Listings Temporarily Unavailable</h4>
                 <p className="text-muted">
-                  We're experiencing technical difficulties loading the property listings. 
+                  We&apos;re experiencing technical difficulties loading the property listings. 
                   Please try again later or contact support if the issue persists.
                 </p>
               </div>

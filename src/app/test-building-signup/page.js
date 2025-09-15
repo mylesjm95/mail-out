@@ -30,7 +30,7 @@ export default function TestBuildingSignup() {
       <div className="mt-4">
         <h3>Instructions:</h3>
         <ol>
-          <li>Click the "Get Updates" button on either building</li>
+          <li>Click the &quot;Get Updates&quot; button on either building</li>
           <li>The modal should open with a custom message about the building</li>
           <li>The modal should automatically switch to the signup tab</li>
           <li>Fill out the signup form</li>

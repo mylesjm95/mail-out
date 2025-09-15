@@ -88,7 +88,7 @@ export default function SyncUsersPage() {
                 <ul className="text-muted">
                   <li>Fetches all users from Supabase Auth</li>
                   <li>Creates corresponding records in your Prisma database</li>
-                  <li>Resolves the "user logged in but database empty" issue</li>
+                  <li>Resolves the &quot;user logged in but database empty&quot; issue</li>
                   <li>Only creates users that don't already exist in the database</li>
                 </ul>
               </div>

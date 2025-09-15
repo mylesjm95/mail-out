@@ -167,7 +167,7 @@ const Condo = async props => {
           <div className="row">
             <div className="col-lg-12 wow fadeInUp" data-wow-delay="100">
               <div className="main-title text-center">
-                <h6>Trusted by the world's best</h6>
+                <h6>Trusted by the world&apos;s best</h6>
               </div>
             </div>
             {/* End .col-12 */}

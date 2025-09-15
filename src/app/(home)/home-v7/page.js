@@ -3,6 +3,7 @@ import Header from "@/components/home/home-v7/Header";
 import Hero from "@/components/home/home-v7/hero";
 import Footer from "@/components/home/home-v7/footer";
 import Image from "next/image";
+import Link from "next/link";
 import Partner from "@/components/common/Partner";
 import FeaturedListings from "@/components/home/home-v7/FeatuerdListings";
 import Cta from "@/components/home/home-v7/Cta";
@@ -191,9 +192,9 @@ const Home_V7 = () => {
                   <br className="d-none d-lg-block" /> do eiusmod tempor
                   incididunt.
                 </p>
-                <a href="/contact" className="ud-btn btn-dark bdrs0">
+                <Link href="/contact" className="ud-btn btn-dark bdrs0">
                   Get Started <i className="fal fa-arrow-right-long" />
-                </a>
+                </Link>
               </div>
             </div>
             <div

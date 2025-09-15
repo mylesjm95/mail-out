@@ -233,7 +233,7 @@ const DailyListingEmail = ({ userName, listings, date }) => {
         
         <div className="content">
           <div className="greeting">
-            Hi {userName || 'there'}! Here's your daily update on property activity in your saved buildings.
+            Hi {userName || 'there'}! Here&apos;s your daily update on property activity in your saved buildings.
           </div>
 
           {Object.keys(groupedListings).length === 0 ? (
@@ -305,7 +305,7 @@ const DailyListingEmail = ({ userName, listings, date }) => {
           )}
           
           <div className="footer">
-            <p>You're receiving this email because you have saved searches for these buildings.</p>
+            <p>You&apos;re receiving this email because you have saved searches for these buildings.</p>
             <p>To manage your preferences, visit your dashboard.</p>
           </div>
         </div>

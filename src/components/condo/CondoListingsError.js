@@ -24,7 +24,7 @@ function CondoListingsErrorFallback({ error, resetErrorBoundary }) {
               </div>
               <h4 className="text-danger mb-3">Unable to Load Property Listings</h4>
               <p className="text-muted mb-4">
-                We're having trouble loading the property listings for this building. 
+                We&apos;re having trouble loading the property listings for this building. 
                 This might be a temporary issue.
               </p>
               <button 
