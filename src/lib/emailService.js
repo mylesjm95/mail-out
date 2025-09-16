@@ -40,8 +40,8 @@ async function getNewListings(buildingSlug, buildingAddress) {
     today.setHours(0, 0, 0, 0); // Start of today
     const todayStartISO = today.toISOString();
 
-    // Get listings that were created OR modified on the previous day
-    const filter = `StreetNumber eq '${streetNumber}' and StreetName eq '${streetName}' and PropertySubType eq 'Condo Apartment' and MlsStatus eq 'New' and ((OriginalEntryTimestamp ge ${yesterdayStartISO} and OriginalEntryTimestamp lt ${todayStartISO}) or (ModificationTimestamp ge ${yesterdayStartISO} and ModificationTimestamp lt ${todayStartISO}))`;
+    // Get listings that were created on the previous day (not just modified)
+    const filter = `StreetNumber eq '${streetNumber}' and StreetName eq '${streetName}' and PropertySubType eq 'Condo Apartment' and MlsStatus eq 'New' and (OriginalEntryTimestamp ge ${yesterdayStartISO} and OriginalEntryTimestamp lt ${todayStartISO})`;
     
     const listings = await fetchFromAmpre(filter, 'OriginalEntryTimestamp desc');
     
@@ -82,7 +82,7 @@ async function getRecentlySoldListings(buildingSlug, buildingAddress) {
     today.setHours(0, 0, 0, 0); // Start of today
     const todayStartISO = today.toISOString();
 
-    const filter = `StreetNumber eq '${streetNumber}' and StreetName eq '${streetName}' and PropertySubType eq 'Condo Apartment' and (MlsStatus eq 'Sold' or MlsStatus eq 'Sold Conditional') and ((SoldEntryTimestamp ge ${yesterdayStartISO} and SoldEntryTimestamp lt ${todayStartISO}) or (ModificationTimestamp ge ${yesterdayStartISO} and ModificationTimestamp lt ${todayStartISO}))`;
+    const filter = `StreetNumber eq '${streetNumber}' and StreetName eq '${streetName}' and PropertySubType eq 'Condo Apartment' and (MlsStatus eq 'Sold' or MlsStatus eq 'Sold Conditional') and (SoldEntryTimestamp ge ${yesterdayStartISO} and SoldEntryTimestamp lt ${todayStartISO})`;
     
     const listings = await fetchFromAmpre(filter, 'ModificationTimestamp desc');
     
@@ -123,7 +123,7 @@ async function getRecentlyLeasedListings(buildingSlug, buildingAddress) {
     today.setHours(0, 0, 0, 0); // Start of today
     const todayStartISO = today.toISOString();
 
-    const filter = `StreetNumber eq '${streetNumber}' and StreetName eq '${streetName}' and PropertySubType eq 'Condo Apartment' and (MlsStatus eq 'Leased' or MlsStatus eq 'Leased Conditional') and ((LeasedEntryTimestamp ge ${yesterdayStartISO} and LeasedEntryTimestamp lt ${todayStartISO}) or (ModificationTimestamp ge ${yesterdayStartISO} and ModificationTimestamp lt ${todayStartISO}))`;
+    const filter = `StreetNumber eq '${streetNumber}' and StreetName eq '${streetName}' and PropertySubType eq 'Condo Apartment' and (MlsStatus eq 'Leased' or MlsStatus eq 'Leased Conditional') and (LeasedEntryTimestamp ge ${yesterdayStartISO} and LeasedEntryTimestamp lt ${todayStartISO})`;
     
     const listings = await fetchFromAmpre(filter, 'ModificationTimestamp desc');
     
