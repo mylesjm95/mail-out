@@ -21,11 +21,19 @@ jobs:
           node-version: 18
           cache: 'npm'
 
+      - name: Disable corepack and ensure npm
+        run: |
+          corepack disable
+          npm --version
+
       - name: Install dependencies (clean)
         run: npm ci --no-fund --no-audit
 
       - name: Build
         run: npm run build
+        env:
+          npm_config_package_manager: npm
+          NEXT_TELEMETRY_DISABLED: 1
 
       - name: Send daily emails
         run: node scripts/send-daily-emails.js
